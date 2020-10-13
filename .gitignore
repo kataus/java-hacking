@@ -1,0 +1,9 @@
+*.iml
+.idea
+gradle-wrapper.*
+gradlew.*
+gradlew
+.gradle
+buildSrc
+build
+*.class
