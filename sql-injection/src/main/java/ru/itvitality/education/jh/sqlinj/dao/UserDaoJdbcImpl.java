@@ -10,9 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-@Service
+//@Service
 @AllArgsConstructor
-public class UserDaoImpl  implements UserDao{
+public class UserDaoJdbcImpl implements UserDao{
     private final JdbcOperations jdbc;
 
     @Override
@@ -22,27 +22,20 @@ public class UserDaoImpl  implements UserDao{
 
     @Override
     public User getById( Integer id ) {
-        String query = "select * from users " +
-                "where id = " + id + "";
-        return jdbc.query( query, new UserDaoImpl.UserMapper())
-                .stream().findFirst().orElse( null );
+        return null;
     }
 
     @Override
     public List<User> getByName( String name ) {
         String query = "select * from users " +
                 "where name = '" + name + "'";
-        return jdbc.query( query, new UserDaoImpl.UserMapper());
+
+        return jdbc.query( query,  new UserDaoJdbcImpl.UserMapper());
     }
 
     @Override
     public User update( User user ) {
-        String query = "update users " +
-                "set name = '"+user.getName()+"' " +
-                "    password = '" + user.getPassword() + "'" +
-                " where id =    " + user.getId() ;
-        jdbc.update( query );
-        return getById( user.getId() );
+        return user;
     }
 
     private static class UserMapper implements RowMapper<User> {

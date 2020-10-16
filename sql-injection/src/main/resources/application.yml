@@ -16,3 +16,7 @@ spring:
 logging:
   level:
     root: info
+    org:
+      springframework:
+        jdbc:
+          core: trace
