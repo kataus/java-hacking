@@ -4,6 +4,7 @@ import lombok.Value;
 
 @Value
 public class User {
-    private int id;
+    private Integer id;
     private String name;
+    private String password;
 }

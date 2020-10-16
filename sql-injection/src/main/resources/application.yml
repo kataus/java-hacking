@@ -1,4 +1,5 @@
 spring:
+
   h2:
     console:
       enabled: true
@@ -11,3 +12,7 @@ spring:
       classpath: /schema.sql
       data:
         classpath: /data.sql
+
+logging:
+  level:
+    root: info
