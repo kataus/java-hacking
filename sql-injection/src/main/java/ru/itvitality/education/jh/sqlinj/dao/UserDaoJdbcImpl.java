@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-//@Service
+@Service
 @AllArgsConstructor
 public class UserDaoJdbcImpl implements UserDao{
     private final JdbcOperations jdbc;
